@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-on-surface font-body-md;
+    selection-color: theme('colors.on-secondary-container');
+  }
+
+  ::selection {
+    @apply bg-secondary-container text-on-secondary-container;
+  }
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+
+  .tonal-layer {
+    background-color: rgba(124, 86, 63, 0.05);
+  }
+
+  .ambient-shadow {
+    box-shadow: 0 10px 40px -15px rgba(45, 27, 17, 0.1);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(180deg, rgba(255, 248, 246, 0) 0%, rgba(255, 248, 246, 1) 100%);
+  }
+}
