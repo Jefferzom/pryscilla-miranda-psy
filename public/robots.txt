@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (atualize com o domínio real)
+# Sitemap: https://www.pryscillafaria.com.br/sitemap.xml
