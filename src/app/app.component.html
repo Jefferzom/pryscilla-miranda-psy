@@ -14,10 +14,46 @@
 
     <!-- Desktop Navigation -->
     <div class="hidden md:flex items-center gap-stack-lg">
-      <a (click)="scrollTo($event, 'inicio')" class="font-label-md text-label-md text-primary font-bold border-b-2 border-secondary py-1 cursor-pointer" href="#inicio">Início</a>
-      <a (click)="scrollTo($event, 'sobre')" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1 cursor-pointer" href="#sobre">Sobre</a>
-      <a (click)="scrollTo($event, 'servicos')" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1 cursor-pointer" href="#servicos">Serviços</a>
-      <a (click)="scrollTo($event, 'contato')" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1 cursor-pointer" href="#contato">Contato</a>
+      <a
+        (click)="scrollTo($event, 'inicio')"
+        [class.text-primary]="isActive('inicio')"
+        [class.font-bold]="isActive('inicio')"
+        [class.border-secondary]="isActive('inicio')"
+        [class.border-transparent]="!isActive('inicio')"
+        [class.text-on-surface-variant]="!isActive('inicio')"
+        class="font-label-md text-label-md hover:text-primary transition-colors py-1 cursor-pointer border-b-2"
+        href="#inicio"
+      >Início</a>
+      <a
+        (click)="scrollTo($event, 'sobre')"
+        [class.text-primary]="isActive('sobre')"
+        [class.font-bold]="isActive('sobre')"
+        [class.border-secondary]="isActive('sobre')"
+        [class.border-transparent]="!isActive('sobre')"
+        [class.text-on-surface-variant]="!isActive('sobre')"
+        class="font-label-md text-label-md hover:text-primary transition-colors py-1 cursor-pointer border-b-2"
+        href="#sobre"
+      >Sobre</a>
+      <a
+        (click)="scrollTo($event, 'servicos')"
+        [class.text-primary]="isActive('servicos')"
+        [class.font-bold]="isActive('servicos')"
+        [class.border-secondary]="isActive('servicos')"
+        [class.border-transparent]="!isActive('servicos')"
+        [class.text-on-surface-variant]="!isActive('servicos')"
+        class="font-label-md text-label-md hover:text-primary transition-colors py-1 cursor-pointer border-b-2"
+        href="#servicos"
+      >Serviços</a>
+      <a
+        (click)="scrollTo($event, 'contato')"
+        [class.text-primary]="isActive('contato')"
+        [class.font-bold]="isActive('contato')"
+        [class.border-secondary]="isActive('contato')"
+        [class.border-transparent]="!isActive('contato')"
+        [class.text-on-surface-variant]="!isActive('contato')"
+        class="font-label-md text-label-md hover:text-primary transition-colors py-1 cursor-pointer border-b-2"
+        href="#contato"
+      >Contato</a>
       <a
         href="https://wa.me/5561995865529"
         target="_blank"
@@ -41,10 +77,46 @@
   <!-- Mobile Menu -->
   @if (mobileMenuOpen) {
     <div class="md:hidden bg-surface border-t border-outline-variant/20 px-4 py-4 flex flex-col gap-1">
-      <a (click)="scrollTo($event, 'inicio')" class="font-label-md text-label-md text-primary py-3 px-2 rounded-lg cursor-pointer" href="#inicio">Início</a>
-      <a (click)="scrollTo($event, 'sobre')" class="font-label-md text-label-md text-on-surface-variant py-3 px-2 rounded-lg cursor-pointer" href="#sobre">Sobre</a>
-      <a (click)="scrollTo($event, 'servicos')" class="font-label-md text-label-md text-on-surface-variant py-3 px-2 rounded-lg cursor-pointer" href="#servicos">Serviços</a>
-      <a (click)="scrollTo($event, 'contato')" class="font-label-md text-label-md text-on-surface-variant py-3 px-2 rounded-lg cursor-pointer" href="#contato">Contato</a>
+      <a
+        (click)="scrollTo($event, 'inicio')"
+        [class.text-primary]="isActive('inicio')"
+        [class.font-bold]="isActive('inicio')"
+        [class.border-secondary]="isActive('inicio')"
+        [class.border-transparent]="!isActive('inicio')"
+        [class.text-on-surface-variant]="!isActive('inicio')"
+        class="font-label-md text-label-md py-3 px-2 cursor-pointer border-b-2 inline-block w-fit"
+        href="#inicio"
+      >Início</a>
+      <a
+        (click)="scrollTo($event, 'sobre')"
+        [class.text-primary]="isActive('sobre')"
+        [class.font-bold]="isActive('sobre')"
+        [class.border-secondary]="isActive('sobre')"
+        [class.border-transparent]="!isActive('sobre')"
+        [class.text-on-surface-variant]="!isActive('sobre')"
+        class="font-label-md text-label-md py-3 px-2 cursor-pointer border-b-2 inline-block w-fit"
+        href="#sobre"
+      >Sobre</a>
+      <a
+        (click)="scrollTo($event, 'servicos')"
+        [class.text-primary]="isActive('servicos')"
+        [class.font-bold]="isActive('servicos')"
+        [class.border-secondary]="isActive('servicos')"
+        [class.border-transparent]="!isActive('servicos')"
+        [class.text-on-surface-variant]="!isActive('servicos')"
+        class="font-label-md text-label-md py-3 px-2 cursor-pointer border-b-2 inline-block w-fit"
+        href="#servicos"
+      >Serviços</a>
+      <a
+        (click)="scrollTo($event, 'contato')"
+        [class.text-primary]="isActive('contato')"
+        [class.font-bold]="isActive('contato')"
+        [class.border-secondary]="isActive('contato')"
+        [class.border-transparent]="!isActive('contato')"
+        [class.text-on-surface-variant]="!isActive('contato')"
+        class="font-label-md text-label-md py-3 px-2 cursor-pointer border-b-2 inline-block w-fit"
+        href="#contato"
+      >Contato</a>
       <a
         href="https://wa.me/5561995865529"
         target="_blank"

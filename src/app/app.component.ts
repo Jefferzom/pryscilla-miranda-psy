@@ -13,6 +13,7 @@ export class AppComponent {
   navScrolled = false;
   mobileMenuOpen = false;
   showSuccessModal = false;
+  activeSection = 'inicio';
 
   contact = {
     name: '',
@@ -23,6 +24,7 @@ export class AppComponent {
 
   private readonly document = inject(DOCUMENT);
   private readonly whatsappNumber = '5561995865529';
+  private readonly sectionIds = ['inicio', 'sobre', 'servicos', 'contato'];
 
   private readonly subjectLabels: Record<string, string> = {
     consulta: 'Agendamento de Consulta',
@@ -40,11 +42,32 @@ export class AppComponent {
   private setupScrollListener(): void {
     this.document.defaultView?.addEventListener('scroll', () => {
       this.navScrolled = (this.document.defaultView?.scrollY ?? 0) > 20;
+      this.updateActiveSectionOnScroll();
     });
+  }
+
+  private updateActiveSectionOnScroll(): void {
+    const offset = 120;
+    let current = this.sectionIds[0];
+
+    for (const id of this.sectionIds) {
+      const el = this.document.getElementById(id);
+      if (!el) continue;
+      if (el.getBoundingClientRect().top - offset <= 0) {
+        current = id;
+      }
+    }
+
+    this.activeSection = current;
+  }
+
+  isActive(id: string): boolean {
+    return this.activeSection === id;
   }
 
   scrollTo(event: Event, id: string): void {
     event.preventDefault();
+    this.activeSection = id;
     this.mobileMenuOpen = false;
     const el = this.document.getElementById(id);
     if (el) {
